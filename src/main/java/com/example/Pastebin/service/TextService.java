@@ -20,14 +20,13 @@ public class TextService implements ITextService{
     }
 
     // methods
-
     @Override
     public List<TextDto> getAllText() {
         return textRepository.findAll().stream()
                 .map(text -> {
                     String textSummary;
-                    if (text.getText().length() > 100) {
-                        textSummary = text.getText().substring(0, 100) + "...";
+                    if (text.getText()  != null && text.getText().length() > 50) {
+                        textSummary = text.getText().substring(0, 50) + "...";
                     } else {
                         textSummary = text.getText();
                     }
@@ -39,11 +38,9 @@ public class TextService implements ITextService{
 
     @Override
     public Text saveText(Text text) {
-
         if (text == null || text.getText().isEmpty()) {
             throw new IllegalArgumentException("Text can't be null or empty");
         }
-
         return textRepository.save(text);
     }
 
@@ -60,9 +57,17 @@ public class TextService implements ITextService{
 
     @Override
     public void deleteTextById(Long id) {
-
         // same check as updating a text
         Text existingText = textRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("The text with ID: \" + id + \" was not found."));
         textRepository.delete(existingText);
     }
+
+    // for full text
+    @Override
+    public Text getTextById(Long id) {
+        return textRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("The text with id " + id + " was not found!"));
+    }
+
+
 }

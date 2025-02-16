@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ITextService {
 
-    // Get Method
+    // Get Method for all texts
     List<TextDto> getAllText();
 
     // Post Method
@@ -18,4 +18,8 @@ public interface ITextService {
 
     // Delete Method
     void deleteTextById(Long id);
+
+    // get method for full text
+    Text getTextById(Long id);
+
 }

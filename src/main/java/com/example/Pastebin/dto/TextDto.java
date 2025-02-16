@@ -2,11 +2,11 @@ package com.example.Pastebin.dto;
 
 public class TextDto {
     private Long id;
-    private String textSummary;
+    private String text;
 
-    public TextDto(Long id, String textSummary) {
+    public TextDto(Long id, String text) {
         this.id = id;
-        this.textSummary = textSummary;
+        this.text = text;
     }
 
     public Long getId() {
@@ -17,11 +17,11 @@ public class TextDto {
         this.id = id;
     }
 
-    public String getTextSummary() {
-        return textSummary;
+    public String getText() {
+        return text;
     }
 
-    public void setTextSummary(String textSummary) {
-        this.textSummary = textSummary;
+    public void setText(String text) {
+        this.text = text;
     }
 }

@@ -3,6 +3,7 @@ package com.example.Pastebin.controller;
 import com.example.Pastebin.dto.TextDto;
 import com.example.Pastebin.model.Text;
 import com.example.Pastebin.service.TextService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +15,12 @@ public class TextController {
 
     private final TextService textService;
 
+    //dependency injection
     public TextController(TextService textService) {
         this.textService = textService;
     }
 
+    // for Postman
     @GetMapping
     public List<TextDto> getText() {
         return textService.getAllText();
@@ -40,4 +43,8 @@ public class TextController {
         textService.deleteTextById(id);
     }
 
+    @GetMapping("/text/{id}")
+    public Text getTextById(@PathVariable Long id) {
+        return textService.getTextById(id);
+    }
 }
