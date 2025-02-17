@@ -68,6 +68,4 @@ public class TextService implements ITextService{
         return textRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("The text with id " + id + " was not found!"));
     }
-
-
 }
