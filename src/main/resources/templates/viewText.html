@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>View Text</title>
-  <link rel="stylesheet" type="text/css" href="/view_text.css">
+    <title>View Text</title>
+    <link rel="stylesheet" type="text/css" href="/view_text.css">
 </head>
 <body>
 <h1>View text content</h1>
 <div class="text-container">
-  <p th:text="${text.text}"></p>
+    <p th:text="${text.text}"></p>
 </div>
 <div class="buttons">
-  <a th:href="@{/texts/edit/{id}(id=${text.id})}">
-    <button class="edit-btn">EDIT</button>
-  </a>
-  <form th:action="@{/texts/delete/{id}(id=${text.id})}" method="post" style="display: inline;">
-    <input type="hidden" name="_method" value="delete"/>
-    <button type="submit" class="delete-btn">DELETE</button>
-  </form>
-  <a href="/texts">
-    <button class="back-btn">BACK</button>
-  </a>
+    <a th:href="@{/texts/edit/{id}(id=${text.id})}">
+        <button class="edit-btn">EDIT</button>
+    </a>
+    <form th:action="@{/texts/delete/{id}(id=${text.id})}" method="post" style="display: inline;">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" class="delete-btn">DELETE</button>
+    </form>
+    <a href="/texts">
+        <button class="back-btn">BACK</button>
+    </a>
 </div>
 </body>
 </html>

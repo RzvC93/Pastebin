@@ -7,11 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class WebController {
+public class TextController {
 
     private final TextService textService;
 
-    public WebController(TextService textService) {
+    public TextController(TextService textService) {
         this.textService = textService;
     }
 

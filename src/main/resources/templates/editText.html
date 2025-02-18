@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Edit text</title>
-  <link rel="stylesheet" type="text/css" href="/edit_text.css">
+    <title>Edit text</title>
+    <link rel="stylesheet" type="text/css" href="/edit_text.css">
 </head>
 <body>
 <h1>Edit Text</h1>
 <form th:action="@{/texts/update/{id}(id=${text.id})}" method="post">
-  <textarea name="text" th:text="${text.text}"></textarea>
-  <div class="button-container">
-    <button type="submit" class="button save-btn">SAVE</button>
-    <a href="/texts" class="button back-btn">BACK</a>
-  </div>
+    <textarea name="text" th:text="${text.text}"></textarea>
+    <div class="button-container">
+        <button type="submit" class="button save-btn">SAVE</button>
+        <a href="/texts" class="button back-btn">BACK</a>
+    </div>
 </form>
-
 </body>
 </html>
